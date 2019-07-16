@@ -3704,7 +3704,7 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-		@media screen and (max-width: 136px) {
+		@media screen and (max-width: 10px) {
 
 			#banner {
 				padding: 7em 3em 5em 3em ;
