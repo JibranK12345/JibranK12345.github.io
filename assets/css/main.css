@@ -3706,11 +3706,10 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-		@media screen and (max-width: 36px) {
+		@media screen and (max-width: 736px) {
 
 			#banner {
 				padding: 7em 3em 5em 3em ;
-				height: auto;
 				min-height: 0;
 			}
 
@@ -3999,3 +3998,18 @@ input, select, textarea {
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
+	.aspect-ratio {
+		position: relative;
+		width: 100%;
+		height: 0;
+		padding-bottom: 56%; /* The height of the item will now be 56% of the width. */
+	  }
+	  
+	  /* Adjust the iframe so it's rendered in the outer-width and outer-height of it's parent */
+	  .aspect-ratio iframe {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+	  }
