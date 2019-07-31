@@ -28,6 +28,7 @@
 				<!-- Header -->
 					<header id="header" class="alt">
 						<h1><a href="index.html">Jibran Khalil</a></h1>
+						
 					</header>
 
 				<!-- Banner -->
@@ -37,6 +38,10 @@
 							<p>UT Austin<br/>
 							computer science<br />
 							student</p>
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/jibran-khalil/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+								<li><a href="mailto:jibranraahim123@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
 							<ul class="actions special">
 								<li><a href="resume.pdf" class="button primary" target="_blank">Resume</a></li>
 							</ul>
@@ -49,7 +54,7 @@
 						<div class="inner">
 							<header class="major">
 								<h2>Background</h2>
-								<p>Hi, I'm Jibran! I love solving common problems using technology. I started building websites in 7th grade using PHP and mySQl; a few years later, I started making iPhone apps. My first app was Peeko, an anonymous based social network focused on authentic conversations. Soon, I developed Scan To Sheets, a scanning app integrated with the Google Sheets API allowing teachers to easily take attendance; it's now used in over 60 countries. In my freetime, I love to play basketball, write stories, and read Quora. I hope to continue learning new technologies so I can tackle whatever problems we face. </p>
+								<p>Hi, I'm Jibran! I love solving common problems using technology. I started building websites in 7th grade using PHP and mySQL; a few years later, I started making iPhone apps. My first app was Peeko, an anonymous based social network focused on authentic conversations. Soon, I developed Scan To Sheets, a scanning app integrated with the Google Sheets API allowing teachers to easily take attendance; it's now used in over 60 countries. In my free time, I love to play basketball, write stories, and read Quora. I hope to continue learning new technologies so I can tackle whatever problems we, as a society, face. </p>
 							</header>
 							<ul class="icons major">
 								<li><span class="icon solid fa-basketball-ball major style3"><span class="label"></span></span></li>
@@ -69,44 +74,69 @@
 					<section id="two" class="wrapper alt style2">
 						<section class="spotlight">
 							<div class="image"><div class="aspect-ratio"><iframe src="https://www.youtube.com/embed/wLCRAELKx0k" allowfullscreen></iframe></div></div><div class="content">
-								<h2><a href = "https://apps.apple.com/us/app/id1419382037">Peeko <br>
+								<h2><a href = "https://apps.apple.com/us/app/id1419382037">Peeko: <br>
 									Anonymous conversations with friends</a></h2>
 								<p>Peeko is a platform for authentic conversations with your friends. Everything is anonymous — or so it seems. Developed with Swift, Firebase, and Node.js.</p>
 							</div>
 						</section>
+						</section>
+
+						<section id="three" class="wrapper style3 special">
+							<div class="inner">
+								<header class="major">
+									<h2>Peeko, In Depth</h2>
+									<p><b>Peeko background, overview, and technology</b></p>
+								</header>
+								<ul class="features">
+									<li>
+										<center><img src = "images/RoundedIcon.png" width = "50vh" height = "50vh"></img><br/><br/></center>
+										<p><b>Background :</b> <br/>As a highschool student, I noticed social networking was becoming more and more inauthentic. My friends were posting to seek attention, garner likes, and advertise how perfect their lives were. Social media was intended for communication, and it had instead devolved into a depressing bubble filled with falsified, filtered images. So, I decided to develop Peeko, a platform for authenticity through anonymous conversations with your friends about the topics that are really on your mind. <br/><br/><b>Overview:</b><br/>Peeko allows users to add friends and post topics anonymously about whatever is on their mind; all their friends can see the topic, but no one will know it's them. If the topic gets enough "peeks", the user's identity will be revealed. Otherwise, the topic will disappear after 6, 12, or 24 hours. Friends can start conversations with the topic, anonymously; if the topic is revealed, both users in the conversation will have their identity revealed. The algorithm to determine how many peeks a post needs to get revealed is based off a percentage of total friends and total active friends.<br/><br/><b>Technology:</b><br/>Peeko was built using Swift, Firebase, Google Cloud Storage, and Google Cloud Functions written in node.js. Google Cloud Functions are used in multiple ways, such as to delete old posts (this function is run every minute), append information to a revealed post, report users, etc. Caching is used to store friend lists, messages, and images. Google Cloud Storage is used to store profile images and user posted images. Peeko includes a custom UI, logic to ensure syncing between cached data and new data, key based backend encryption (for identities in conversations), and a sign-up flow. Peeko is my largest project to date, and development took 1.5 years. </p>
+									</li>
+								</ul>
+							</div>
+						</section>
+
+						<section id="two" class="wrapper alt style2">
 						<section class="spotlight"> 
 								
 								<div class="image"><div class="aspect-ratio"><iframe src="https://www.youtube.com/embed/B8FN0p4hHWo" allowfullscreen></iframe></div></div><div class="content">
-								<h2><a href = "https://apps.apple.com/us/app//id1434948420">Scan To Sheets<br />
+								<h2><a href = "https://apps.apple.com/us/app//id1434948420">Scan To Sheets:<br />
 								Attendance, scanning, and tracking for Google Sheets</a></h2>
 								<p>iOS app using Google Sheets API to upload barcodes to Google Sheet. Downloaded over 2000 times and in over 60 countries.</p>
 							</div>
 						</section>
 					</section>
 
-				<!-- Three -->
 					<section id="three" class="wrapper style3 special">
 						<div class="inner">
 							<header class="major">
-								<h2>In Depth</h2>
-								<p>App backgrounds, overviews, and technology details</p>
+								<h2>Scan to Sheets, In Depth</h2>
+								<p><b>Scan to Sheets background, overview, and technology</b></p>
 							</header>
 							<ul class="features">
 								<li>
-									<center><img src = "images/RoundedIcon.png" width = "50vh" height = "50vh"></img><br/><br/><h3>Peeko</h3></center>
-									<p><b>Background :</b> <br/>As a highschool student, I was noticing social networking was becoming more and more inauthetnic. My friends were posting to seek attention, garner likes, and advertise how perfect their lives were. Social media was intended for communication, and it had instead devolved into a depressing bubble filled with falsfied, filtered images. So, I decided to develop Peeko, a platform for authetnicty through anonymous conversations with your friends about the topics that are really on your mind. <br/><br/><b>Overview:</b><br/>Peeko allows users to add friends and post topics anonymously about whatever's on their mind; all their friends can see the topic, but no one will know it's them. If the topic gets enough "peeks", the user's identity will be revelaed. Otherwise, the topic will disappear after 6, 12, or 24 hours. Friends can start conversations with the topic, anonymously; if the topic is revealed, both users in the conversation will have their identity revealed. The algorithm to determine how many peeks a post needs to get revealed is based off a percentage of total friends and total active friends.<br/><br/><b>Technology:</b><br/>Peeko was built using Swift, Firebase, Google Cloud Storage, and node.JS Google Cloud Functions. Google Cloud Functions are used in multiple ways, such as to delete old posts (this function is run every minute), append information to a revealed post, report users, etc. Caching is used to store friend lists, messages, and images. Google Cloud Storage is used to store profile images and user posted images. Peeko includes custom UI, logic to ensure syncing between cached data and new data, and a signup flow. Peeko is my largest project to date, and development took 1.5 years. </p>
+									<center><img src = "images/ScanToSheets.png" width = "50vh" height = "50vh"></img><br/><br/></center>
+									<p><b>Background / Overview:</b><br/>In Mu Alpha Theta, a club I was a part of in high school, taking attendance at the end of meetings would take over ten minutes. So, I made Scan To Sheets; it allowed officers to simply scan a student's ID and have their information instantly uploaded to a Google Sheet. Scan To Sheets began expanding rapidly; at first, other clubs in my highschool began using it. Soon after, schools within the district started incorporating the app, and, within a few months, people — specifically teachers — in over 60 countries had started using the app for attendance. After releasing an update allowing users to scan two barcodes at the same time, more teachers in our district began using the app to check out Apple Pencils to students. What started as an app for a school club had expanded globally.<br/><br/><b>Technology:</b><br/>Scan To Sheets was developed in Swift and uses the Google Sheets API to upload barcodes and QR codes instantaneously to a Google Sheet.</p>
 								</li>
-								<li>
-									<center><img src = "images/ScanToSheets.png" width = "50vh" height = "50vh"></img><br/><br/><h3>Scan To Sheets</h3></center>
-									<p><b>Background / Overview:</b><br/>In Mu Alpha Theta, a club I was a part of in high school, attendance would take at the end of meetings would take over ten minutes. So, I made Scan To Sheets; it allowed officers to simply scan a student's ID and have their information instantly uploaded to a Google Sheet. Scan To Sheets began expanding rapidly; at first, other clubs in my highschool began using it. Soona after, schools within the district, and, within a few months, people — specifically teachers — in over 60 countries had started using the app for attendance. My math teacher asked if I could release an update that would allow users to scan two barcodes and have them both uplaoded, as our school was begining to check out Apple Pencils to students. I released the update, and even more teachers began using the app for checking out Apple Pencils. What started as an app for a school club had expanded globally.<br/><br/><b>Technology:</b><br/>Scan To Sheets was developed in Swift and uses the Google Sheets API to upload barcodes and QR codes instantaneously to a Google Sheet.</p>
-								</li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style3 special skillSection" >
+						<div class="inner">
+							<header class="major">
+								<h2>Technology Skills</h2>
+								<p>Languages and Databases</p>
+							</header>
+							<ul class="features">
 								<li>
 									<center><img src = "images/swiftRounded.png" width = "50vh" height = "50vh"></img><br/><br/><h3>Swift</h3></center>
-									<p>Developing in Swift for over two years.</p>
+									<p>Developing in Swift for over two years. Experience in storyboards, caching, and creating comprehensive apps.</p>
 								</li>
 								<li>
 										<center><img src = "images/firebaseRounded.png" width = "50vh" height = "50vh"></img><br/><br/><h3>Firebase / noSQL</h3></center>
-									<p>Extensive experience with data denormalization, Firebase Real Time Database, and Fire Store.</p>
+									<p>Extensive experience with data denormalization, Firebase Realtime Database, Firebase Firetore, Google Cloud Storage, and Google Cloud Functions.</p>
 								</li>
 							</ul>
 						</div>
@@ -115,10 +145,7 @@
 
 				<!-- Footer -->
 					<footer id="footer">
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/jibran-khalil/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
+						
 						<ul class="copyright">
 							<li>&copy; Jibran Khalil</li>
 						</ul>

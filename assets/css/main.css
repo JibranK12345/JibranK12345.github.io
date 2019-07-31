@@ -171,7 +171,7 @@ input, select, textarea {
 		letter-spacing: 0.225em;
 		line-height: 1em;
 		margin: 0 0 1em 0;
-		text-transform: uppercase;
+		
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -2987,6 +2987,17 @@ input, select, textarea {
 			color: white;
 		}
 
+		.skillSection {
+			background-color: white !important;
+			color: #01b3ff !important;
+		}
+
+		.skillSection h2,  .skillSection h3,  .skillSection h4, .skillSection p {
+			color: #01b3ff !important;
+		}
+
+
+
 			.wrapper.style3 strong, .wrapper.style3 b {
 				color: #ffffff;
 			}
@@ -3897,7 +3908,7 @@ input, select, textarea {
 				
 			}
 
-				#footer .icons a:hover {
+				 .icons a:hover {
 					color: #ef5e4a;
 				}
 
@@ -3974,21 +3985,6 @@ input, select, textarea {
 		background-color: rgba(29, 36, 42, 0.0);
 	}
 
-	body.is-mobile.landing #page-wrapper {
-		background: none;
-	}
-
-	body.is-mobile.landing #banner,
-	body.is-mobile.landing .wrapper.style4 {
-		background-image: url("../../images/background.png");
-		background-position: center center;
-		background-repeat: no-repeat;
-		background-size: cover;
-	}
-
-	body.is-mobile.landing #footer {
-		background-color: #1d242a;
-	}
 	.aspect-ratio {
 		position: relative;
 		width: 100%;
