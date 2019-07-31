@@ -3981,6 +3981,16 @@ input, select, textarea {
 		padding-top: 0;
 	}
 
+
+	body.is-mobile.landing #banner,
+	body.is-mobile.landing .wrapper.style4 {
+		background-image: url("../../images/background.png");
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+
 	body.landing #footer {
 		background-color: rgba(29, 36, 42, 0.0);
 	}
