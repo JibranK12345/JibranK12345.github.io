@@ -3606,33 +3606,6 @@ input, select, textarea {
 			z-index: 1;
 		}
 
-			#banner h2:before, #banner h2:after {
-				-moz-transition: width 0.2s ease;
-				-webkit-transition: width 0.2s ease;
-				-ms-transition: width 0.2s ease;
-				transition: width 0.2s ease;
-				-moz-transition-delay: 0.2s;
-				-webkit-transition-delay: 0.2s;
-				-ms-transition-delay: 0.2s;
-				transition-delay: 0.2s;
-				background: #fff;
-				content: '';
-				display: block;
-				height: 2px;
-				position: absolute;
-				width: 100%;
-			}
-
-			#banner h2:before {
-				top: 0;
-				left: 0;
-			}
-
-			#banner h2:after {
-				bottom: 0;
-				right: 0;
-			}
-
 		#banner p {
 			letter-spacing: 0.225em;
 			text-transform: uppercase;
@@ -3643,18 +3616,6 @@ input, select, textarea {
 			}
 
 		#banner .more {
-			-moz-transition: -moz-transform 0.2s ease, opacity 0.2s ease;
-			-webkit-transition: -webkit-transform 0.2s ease, opacity 0.2s ease;
-			-ms-transition: -ms-transform 0.2s ease, opacity 0.2s ease;
-			transition: transform 0.2s ease, opacity 0.2s ease;
-			-moz-transition-delay: 2s;
-			-webkit-transition-delay: 2s;
-			-ms-transition-delay: 2s;
-			transition-delay: 2s;
-			-moz-transform: translateY(0);
-			-webkit-transform: translateY(0);
-			-ms-transform: translateY(0);
-			transform: translateY(0);
 			border: none;
 			bottom: 0;
 			color: inherit;
@@ -3887,7 +3848,7 @@ input, select, textarea {
 
 	#footer {
 		padding: 6em 0 4em 0 ;
-		background-color: #1d242a;
+		background-color: #01b3ff;
 		text-align: center;
 	}
 
