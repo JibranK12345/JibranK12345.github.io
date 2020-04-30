@@ -10,6 +10,7 @@ let utterances = []
 var audios = []
 var lastOption = {}
 
+var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
 
 repeatBtn.addEventListener('click', () => {
     repeatBtn.style.visibility = 'hidden';
@@ -19,7 +20,7 @@ repeatBtn.addEventListener('click', () => {
 })
 
 let validVoices = {
-      'Google US English': 0.75, //en-US M
+      'Google US English': 0.85, //en-US M
       'Daniel': 0.9, //en-GB M
       'Google UK English Female': 0.75, //en-GB F
       'Victoria': 0.85,
@@ -39,15 +40,20 @@ function startGame() {
         }
     }
     else {
-        state = {}
-        chosenOptions = []
-        utterances = []
-        while (optionButtonElements.firstChild) {
-            optionButtonElements.removeChild(optionButtonElements.firstChild)
+        if (isChrome) {
+            alert("Please use a different browser than Chrome.")
         }
-        flowers.style.visibility = 'hidden';
-        let s = setSpeech();
-        s.then(showTextNode(1000000000))
+        else {
+            state = {}
+            chosenOptions = []
+            utterances = []
+            while (optionButtonElements.firstChild) {
+                optionButtonElements.removeChild(optionButtonElements.firstChild)
+            }
+            flowers.style.visibility = 'hidden';
+            let s = setSpeech();
+            s.then(showTextNode(1000000000))
+    }
     }
 }
 
@@ -721,7 +727,7 @@ const textNodes = [
     },
 {
         id: 35,
-        text: "As you head towards the counter, you notice an unsusual crevice in the wall. You walk a bit closer to it, cautious of why it's there. As you get closer, you realize it's actually a tunnel dug into the wall, but it's completely dark. Do you enter?",
+        text: "As you head towards the counter, you notice an unusual crevice in the wall. You walk a bit closer to it, cautious of why it's there. As you get closer, you realize it's actually a tunnel dug into the wall, but it's completely dark. Do you enter?",
         options: [
             {
                                                                 text: "Enter the tunnel ",
@@ -777,7 +783,7 @@ const textNodes = [
     },
 {
         id: 40,
-        text: "As you enter the cart, the man pulls a lever that takes you zipping away. You slowly rise, climbing up the tracks and onto the walls of the cave. As you're speeding through, you notice someone's cart derail and crash, surely killing whoever is inside. The man doesn't acknwoledge them, though.",
+        text: "As you enter the cart, the man pulls a lever that takes you zipping away. You slowly rise, climbing up the tracks and onto the walls of the cave. As you're speeding through, you notice someone's cart derail and crash, surely killing whoever is inside. The man doesn't acknowledge them, though.",
         options: [
             {
                                                                 text: "Enjoy the ride ",
