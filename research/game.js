@@ -42,6 +42,9 @@ function startGame() {
     else {
         if (isChrome) {
             alert("Please use a different browser than Chrome.")
+            while (optionButtonElements.firstChild) {
+                optionButtonElements.removeChild(optionButtonElements.firstChild)
+            }
         }
         else {
             state = {}
@@ -845,7 +848,7 @@ const textNodes = [
     },
 {
         id: 45,
-        text: "You prepare to jump, but a boy pulls you away. He takes you by the hand and leads you to a room indented in the wall.",
+        text: "You prepare to jump, but a boy pulls you away. He takes you by the hand and leeds you to a room indented in the wall.",
         options: [
             {
                                                                 text: "Follow him ",
