@@ -20,7 +20,7 @@ repeatBtn.addEventListener('click', () => {
 })
 
 let validVoices = {
-      'Google US English': 0.85, //en-US M
+      'Alex': 0.85, //en-US M
       'Victoria': 0.85,
 }
 
