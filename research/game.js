@@ -21,10 +21,9 @@ repeatBtn.addEventListener('click', () => {
 
 let validVoices = {
       'Google US English': 0.85, //en-US M
-      'Daniel': 0.9, //en-GB M
-      'Google UK English Female': 0.75, //en-GB F
       'Victoria': 0.85,
-  }
+}
+
   let voiceNames = Object.keys(validVoices)
   let voiceIndex = Math.floor(Math.random() * voiceNames.length);
   let chosenName = voiceNames[voiceIndex]
