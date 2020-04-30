@@ -47,6 +47,7 @@ function startGame() {
             }
         }
         else {
+            alert("If you are on a mobile device, please unsilence your phone to hear the audio.")
             state = {}
             chosenOptions = []
             utterances = []
