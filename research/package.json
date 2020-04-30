@@ -1,0 +1,23 @@
+{
+  "name": "voiceresearch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "game.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JibranK12345/FRISpeech.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JibranK12345/FRISpeech/issues"
+  },
+  "homepage": "https://github.com/JibranK12345/FRISpeech#readme",
+  "dependencies": {
+    "firebase": "^7.14.2",
+    "js-cookie": "^2.2.1"
+  }
+}

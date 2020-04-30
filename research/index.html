@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
+      
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAHyqpxelTKD7M7lW6vZMnQ2uzr37XWFw8",
+    authDomain: "voiceresearch-afd2d.firebaseapp.com",
+    databaseURL: "https://voiceresearch-afd2d.firebaseio.com",
+    projectId: "voiceresearch-afd2d",
+    storageBucket: "voiceresearch-afd2d.appspot.com",
+    messagingSenderId: "708284126216",
+    appId: "1:708284126216:web:52e7934dbf2523bc38adbd",
+    measurementId: "G-KKSY7FJWER"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig); 
+</script>
+
+
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href = "style.css" rel = "stylesheet">
+    <script defer src = "game.js"></script>
+    <title>Choices Research</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div class = "flowers" id = "flowerGIF"><img SRC="flowers.gif" class = "flowerImage"></div>
+    <div class = "container">
+        <div id = "option-buttons" class = "btn-grid">
+            <button class = "btn">Option One</button>
+            <button class = "btn">Option Two</button>
+        </div>
+    </div>
+    <div id = "repeat">
+        <button id = "repeat-btn" class = "btn">Repeat Audio</button>
+    </div>
+</body>
+</html>
