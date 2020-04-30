@@ -69,6 +69,28 @@ body {
     font-size: 3.5vw;
 }
 
+@media only screen and (max-width: 768px) {
+    
+    .flowerImage {
+        width : 40vw;
+        height: 40vw;
+    }
+
+    .btn {
+        background-color: black;
+        border: 1px solid black;
+        height: 20vh;
+        width: 100%;
+        border-radius: 5px;
+        padding: 1.0vh 2.0vw;
+        color: white;
+        outline: none;
+        font-size: 30px;
+        font-size: 5.5vw;
+    }    
+}
+
+
 .btn:hover {
     border-color: yellow;
 }
