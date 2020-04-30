@@ -97,7 +97,7 @@ function selectOption(option) {
         //Upload state to database
         document.cookie = "completed=true; expires=Thu, 18 Dec 2021 12:00:00 UTC";
         firebase.database().ref('users/').push({
-            "name": chosenName,
+          "name": chosenName,
           "choices": chosenOptions
         })
     }
