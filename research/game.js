@@ -32,6 +32,7 @@ var chosenVoice = null
 var voices = null;
 
 function startGame() {
+    repeatBtn.style.visibility = 'hidden';
     if (getCookie("completed") === "true") {
         while (optionButtonElements.firstChild) {
             optionButtonElements.removeChild(optionButtonElements.firstChild)
