@@ -293,7 +293,7 @@ const textNodes = [
         id: 1000000000,
                 options: [
             {
-                text: "Start ",
+                text: "Sup ",
                 nextText: 1,
             },
         ],
