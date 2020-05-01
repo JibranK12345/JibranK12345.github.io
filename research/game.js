@@ -20,8 +20,8 @@ repeatBtn.addEventListener('click', () => {
 })
 
 let validVoices = {
-      'Alex': 0.85, //en-US M
-      'Victoria': 0.85,
+    'Daniel': 0.9, //en-GB M
+    'Moira': 0.75, //en-GB F
 }
 
   let voiceNames = Object.keys(validVoices)
