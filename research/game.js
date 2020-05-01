@@ -10,7 +10,16 @@ let utterances = []
 var audios = []
 var lastOption = {}
 
-var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+var creepy = new Audio('creepy.mp3');
+var end = new Audio('end.mp3');
+var fantasy = new Audio('fantasy.mp3');
+var fight = new Audio('fight.mp3');
+var hum = new Audio('hum.mp3');
+var intro = new Audio('intro.mp3');
+var market = new Audio('market.mp3');
+var ocean = new Audio('ocean.mp3');
+var train = new Audio('train.mp3');
+var trek = new Audio('trek.mp3');
 
 repeatBtn.addEventListener('click', () => {
     repeatBtn.style.visibility = 'hidden';
@@ -19,12 +28,75 @@ repeatBtn.addEventListener('click', () => {
     repeatAudio(lastOption)
 })
 
-let validVoices = {
-    'Daniel': 0.9, //en-GB M
-    'Moira': 0.75, //en-GB F
+function playSounds() {
+    creepy.volume = 0;
+    creepy.loop = true;
+    end.volume = 0;
+    end.loop = true;
+    fantasy.volume = 0;
+    fantasy.loop = true;
+    fight.volume = 0;
+    fight.loop = true;
+    hum.volume = 0;
+    hum.loop = true;
+    intro.volume = 0;
+    intro.loop = true;
+    market.volume = 0;
+    market.loop = true;
+    ocean.volume = 0;
+    ocean.loop = true;
+    train.volume = 0;
+    trek.volume = 0;
+    trek.loop = true;
+
+    creepy.play();
+    creepy.pause();
+
+    end.play();
+    end.pause();
+
+    fantasy.play();
+    fantasy.pause();
+
+    fight.play();
+    fight.pause();
+
+    hum.play();
+    hum.pause();
+
+    intro.play();
+    intro.pause();
+
+    market.play();
+    market.pause();
+
+    ocean.play();
+    ocean.pause();
+
+    train.play();
+    train.pause();
+
+    trek.play();
+    trek.pause();
+
+    creepy.volume = 0.4;
+    end.volume = 0.4;
+    fantasy.volume = 0.4;
+    fight.volume = 0.4;
+    hum.volume = 0.4;
+    intro.volume = 0.4;
+    market.volume = 0.4;
+    ocean.volume = 0.4;
+    train.volume = 0.4;
+    trek.volume = 0.4;
 }
 
-  let voiceNames = Object.keys(validVoices)
+let validVoices = {
+      'Daniel': 0.9, //en-GB M
+      'Moira': 0.75, //en-GB F
+  }
+
+let voiceNames = Object.keys(validVoices)
   let voiceIndex = Math.floor(Math.random() * voiceNames.length);
   let chosenName = voiceNames[voiceIndex]
   console.log(chosenName)
@@ -32,31 +104,21 @@ var chosenVoice = null
 var voices = null;
 
 function startGame() {
-    repeatBtn.style.visibility = 'hidden';
     if (getCookie("completed") === "true") {
         while (optionButtonElements.firstChild) {
             optionButtonElements.removeChild(optionButtonElements.firstChild)
         }
     }
     else {
-        if (isChrome) {
-            alert("Please use a different browser than Chrome.")
-            while (optionButtonElements.firstChild) {
-                optionButtonElements.removeChild(optionButtonElements.firstChild)
-            }
+        state = {}
+        chosenOptions = []
+        utterances = []
+        while (optionButtonElements.firstChild) {
+            optionButtonElements.removeChild(optionButtonElements.firstChild)
         }
-        else {
-            alert("If you are on a mobile device, please unsilence your phone to hear the audio.")
-            state = {}
-            chosenOptions = []
-            utterances = []
-            while (optionButtonElements.firstChild) {
-                optionButtonElements.removeChild(optionButtonElements.firstChild)
-            }
-            flowers.style.visibility = 'hidden';
-            let s = setSpeech();
-            s.then(showTextNode(1000000000))
-    }
+        flowers.style.visibility = 'hidden';
+        let s = setSpeech();
+        s.then(showTextNode(1000000000))
     }
 }
 
@@ -106,20 +168,22 @@ function selectOption(option) {
         //Upload state to database
         document.cookie = "completed=true; expires=Thu, 18 Dec 2021 12:00:00 UTC";
         firebase.database().ref('users/').push({
-          "name": chosenName,
+            "name": chosenName,
           "choices": chosenOptions
         })
     }
+    if (nextTextNodeID == 1) {
+        console.log("started game");
+        playSounds();
+    }
+
     if (option.audio) {
       audios.forEach(playingSong => {
           fadeOut(playingSong)
       })
       audios = [];
-      var audio = new Audio(option.audio);
-      audio.loop = true;
-      audio.volume = 0.4;
-      audios.push(audio)
-      audio.play()
+      audios.push(option.audio)
+      option.audio.play()
     }
 
     state = Object.assign(state, option.setState)
@@ -135,10 +199,7 @@ function selectOption(option) {
     setTimeout(function(){
       if (option.soundEffect) {
         //Some extra sound effect to play
-        var soundEffect = new Audio(option.soundEffect);
-        soundEffect.volume = 0.2;
-        audios.push(soundEffect)
-        soundEffect.play()
+        option.soundEffect.play()
       }
     }, waitingTime / 2.5);
     setTimeout(function(){
@@ -280,8 +341,8 @@ const textNodes = [
             {
                 text: "Begin Adventure ",
                 nextText: 4,
-                soundEffect: "train.mp3",
-                audio: "intro.mp3",
+                soundEffect: train,
+                audio: intro,
                 timeWait: 7000
             },
         ],
@@ -310,7 +371,7 @@ const textNodes = [
             },
             {
                 text: "Head outside ",
-                audio: "market.mp3",
+                audio: market,
                 timeWait: 3000,
                 nextText: 9,
             },
@@ -350,7 +411,7 @@ const textNodes = [
         options: [
             {
                 text: "Leave the house ",
-                audio: "market.mp3",
+                audio: market,
                 timeWait: 3000,
                 nextText: 9,
             },
@@ -470,14 +531,14 @@ const textNodes = [
         options: [
             {
                 text: "Confront him ",
-                audio: "fight.mp3",
+                audio: fight,
                 timeWait: 3000,
                 nextText: 18,
             },
             {
                 text: "Don't confront him ",
                 nextText: 500,
-                audio: "trek.mp3",
+                audio: trek,
                 timeWait:4000
             },
         ],
@@ -488,14 +549,14 @@ const textNodes = [
         options: [
             {
                 text: "Confront him ",
-                audio: "fight.mp3",
+                audio: fight,
                 timeWait: 3000,
                 nextText: 18,
             },
             {
                 text: "Don't confront him ",
                 nextText: 500,
-                audio: "trek.mp3",
+                audio: trek,
                 timeWait:4000
             },
         ],
@@ -572,7 +633,7 @@ const textNodes = [
         options: [
             {
                 text: "Start trek ",
-                audio: "trek.mp3",
+                audio: trek,
                 timeWait: 4000,
                 nextText: 25,
             },
@@ -584,7 +645,7 @@ const textNodes = [
         options: [
             {
                 text: "Start trek ",
-                audio: "trek.mp3",
+                audio: trek,
                 timeWait: 4000,
                 nextText: 25,
             },
@@ -648,7 +709,7 @@ const textNodes = [
             },
             {
                 text: "Walk in ",
-                audio: "creepy.mp3",
+                audio: creepy,
                 timeWait: 3000,
                 nextText: 32,
             },
@@ -664,7 +725,7 @@ const textNodes = [
             },
             {
                 text: "Walk in ",
-                audio: "creepy.mp3",
+                audio: creepy,
                 timeWait: 3000,
                 nextText: 32,
             },
@@ -676,7 +737,7 @@ const textNodes = [
         options: [
             {
                 text: "Enter store ",
-                audio: "creepy.mp3",
+                audio: creepy,
                 timeWait: 3000,
                 nextText: 32,
             },
@@ -730,7 +791,7 @@ const textNodes = [
     },
 {
         id: 35,
-        text: "As you head towards the counter, you notice an unusual crevice in the wall. You walk a bit closer to it, cautious of why it's there. As you get closer, you realize it's actually a tunnel dug into the wall, but it's completely dark. Do you enter?",
+        text: "As you head towards the counter, you notice an unsusual crevice in the wall. You walk a bit closer to it, cautious of why it's there. As you get closer, you realize it's actually a tunnel dug into the wall, but it's completely dark. Do you enter?",
         options: [
             {
                                                                 text: "Enter the tunnel ",
@@ -769,7 +830,7 @@ const textNodes = [
             {
                 text: "Follow man through door ",
                 nextText: 39,
-                audio: "fantasy.mp3", 
+                audio: fantasy, 
                 timeWait: 4000
             },
         ],
@@ -786,7 +847,7 @@ const textNodes = [
     },
 {
         id: 40,
-        text: "As you enter the cart, the man pulls a lever that takes you zipping away. You slowly rise, climbing up the tracks and onto the walls of the cave. As you're speeding through, you notice someone's cart derail and crash, surely killing whoever is inside. The man doesn't acknowledge them, though.",
+        text: "As you enter the cart, the man pulls a lever that takes you zipping away. You slowly rise, climbing up the tracks and onto the walls of the cave. As you're speeding through, you notice someone's cart derail and crash, surely killing whoever is inside. The man doesn't acknwoledge them, though.",
         options: [
             {
                                                                 text: "Enjoy the ride ",
@@ -848,7 +909,7 @@ const textNodes = [
     },
 {
         id: 45,
-        text: "You prepare to jump, but a boy pulls you away. He takes you by the hand and leeds you to a room indented in the wall.",
+        text: "You prepare to jump, but a boy pulls you away. He takes you by the hand and leads you to a room indented in the wall.",
         options: [
             {
                                                                 text: "Follow him ",
@@ -872,7 +933,7 @@ const textNodes = [
         options: [
             {
                 text: "Approach me ",
-                audio: "hum.mp3", 
+                audio: hum, 
                 timeWait: 5000,
                 nextText: 1000,
             },
@@ -888,13 +949,13 @@ const textNodes = [
         options: [
             {
                 text: "Approach me ",
-                audio: "hum.mp3", 
+                audio: hum, 
                 timeWait: 5000,
                 nextText: 1000,
             },
             {
                 text: "Approach Me ",
-                audio: "hum.mp3", 
+                audio: hum, 
                 timeWait: 5000,
                 nextText: 1000,
             },
@@ -973,7 +1034,7 @@ const textNodes = [
             {
                 text: "Sleep",
                 nextText: 506,
-                audio: "ocean.mp3",
+                audio: ocean,
                 timeWait: 4000
             },
         ],
@@ -1251,7 +1312,7 @@ const textNodes = [
             {
                 text: "Approach me ",
                 nextText: 1000,
-                audio: "hum.mp3",
+                audio: hum,
                 timeWait: 5000
             },
             {
@@ -1267,13 +1328,13 @@ const textNodes = [
             {
                 text: "Approach me ",
                 nextText: 1000,
-                audio: "hum.mp3",
+                audio: hum,
                 timeWait: 5000
             },
             {
                 text: "Approach me ",
                 nextText: 1000,
-                audio: "hum.mp3",
+                audio: hum,
                 timeWait: 5000
             },
         ],
@@ -1422,7 +1483,7 @@ const textNodes = [
                 text: "Accept ",
                 nextText: 1012,
                 timeWait: 7000,
-                audio: "end.mp3"
+                audio: end
             },
         ],
     },
