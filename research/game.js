@@ -180,7 +180,7 @@ function selectOption(option) {
 
     if (option.audio) {
       audios.forEach(playingSong => {
-          fadeOut(playingSong)
+          playingSong.pause();
       })
       audios = [];
       audios.push(option.audio)
@@ -289,7 +289,7 @@ const textNodes = [
         id: 1000000000,
                 options: [
             {
-                text: "sup dudesss",
+                text: "zebra cake",
                 nextText: 1,
             },
         ],
