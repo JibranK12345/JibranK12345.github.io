@@ -197,6 +197,7 @@ function selectOption(option) {
     if (option.timeWait) {
       waitingTime = option.timeWait;
     }
+    say(nextTextNodeID)
     setTimeout(function(){
       if (option.soundEffect) {
         //Some extra sound effect to play
@@ -204,7 +205,6 @@ function selectOption(option) {
       }
     }, waitingTime / 2.5);
     setTimeout(function(){
-      say(nextTextNodeID)
     }, waitingTime);
   }
 
@@ -289,7 +289,7 @@ const textNodes = [
         id: 1000000000,
                 options: [
             {
-                text: "Please let this work",
+                text: "sup dudesss",
                 nextText: 1,
             },
         ],
