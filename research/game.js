@@ -92,16 +92,16 @@ function playSounds() {
 }
 
 let validVoices = {
-      'Daniel': 0.9, //en-GB M
-      'Moira': 0.75, //en-GB F
+      'male': 0.9, //en-GB M
+      'female': 0.75, //en-GB F
   }
 
-let voiceNames = Object.keys(validVoices)
-  let voiceIndex = Math.floor(Math.random() * voiceNames.length);
-  let chosenName = voiceNames[voiceIndex]
-  console.log(chosenName)
-var chosenVoice = null
-var voices = null;
+    let voiceNames = Object.keys(validVoices)
+   let voiceIndex = Math.floor(Math.random() * voiceNames.length);
+   let chosenName = voiceNames[voiceIndex]
+   console.log(chosenName)
+    var chosenVoice = null
+    var voices = null;
 
 function startGame() {
     if (getCookie("completed") === "true") {
@@ -162,6 +162,7 @@ function showOption(option) {
 }
 
 function selectOption(option) {
+    repeatBtn.style.visibility = 'hidden';
     const nextTextNodeID = option.nextText
     lastOption = option
     if (nextTextNodeID <= 0) {
@@ -218,27 +219,21 @@ function selectOption(option) {
 
   function say(textNodeIndex) {
     repeatBtn.style.visibility = 'hidden'
+    const audioName = chosenName + "/" + textNodeIndex + ".mp3";
+    var storyAudio = new Audio(audioName);
+    storyAudio.play();
+    storyAudio.onended = function() {
+        flowers.style.visibility = 'hidden';
+        if (textNodeIndex > 0) {
+            repeatBtn.style.visibility = 'visible';
+        }
+        console.log("message ended")
+        showTextNode(textNodeIndex)
+    };
+    /*
     const m = textNodes.find(textNode => textNode.id === textNodeIndex)
     // var msg = new SpeechSynthesisUtterance(m.text);
     var voices = window.speechSynthesis.getVoices();
-  // if ("speechSynthesis" in window) {
-  //   speechSynthesis.onvoiceschanged = function () {
-  //     var $voicelist = $("#voices");
-  //
-  //     if ($voicelist.find("option").length == 0) {
-  //       speechSynthesis.getVoices().forEach(function (voice, index) {
-  //         var $option = $("<option>")
-  //           .val(index)
-  //           .html(voice.name + (voice.default ? " (default)" : ""));
-  //
-  //         $voicelist.append($option);
-  //       });
-  //
-  //       $voicelist.material_select();
-  //     }
-  //   };
-
-      // var text = $("#message").val();
     voices = window.speechSynthesis.getVoices();
     // console.log(voices.length);
     for (var i = 0; i < voices.length; i++) {
@@ -265,6 +260,7 @@ function selectOption(option) {
 
       utterances.push( msg );
       speechSynthesis.speak(msg);
+      */
 }
 
 
@@ -791,7 +787,7 @@ const textNodes = [
     },
 {
         id: 35,
-        text: "As you head towards the counter, you notice an unsusual crevice in the wall. You walk a bit closer to it, cautious of why it's there. As you get closer, you realize it's actually a tunnel dug into the wall, but it's completely dark. Do you enter?",
+        text: "As you head towards the counter, you notice an unusual crevice in the wall. You walk a bit closer to it, cautious of why it's there. As you get closer, you realize it's actually a tunnel dug into the wall, but it's completely dark. Do you enter?",
         options: [
             {
                                                                 text: "Enter the tunnel ",
