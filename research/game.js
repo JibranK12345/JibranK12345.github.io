@@ -112,8 +112,7 @@ function selectOption(option) {
     }
     if (option.audio) {
       audios.forEach(playingSong => {
-          //fadeOut(playingSong)
-          playingSong.pause();
+          fadeOut(playingSong)
       })
       audios = [];
       var audio = new Audio(option.audio);
