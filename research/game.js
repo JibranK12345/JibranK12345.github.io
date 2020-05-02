@@ -1494,7 +1494,7 @@ const textNodes = [
         text: "That's it. You've disobeyed me one too many times. I'm going to punish you. I'm going to make someone else the narrator now.",
         options: [
             {
-                text: "Accepty ",
+                text: "Accept",
                 nextText: 1012,
             },
         ],
