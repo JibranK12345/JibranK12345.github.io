@@ -79,16 +79,16 @@ function playSounds() {
     trek.play();
     trek.pause();
 
-    creepy.volume = 0.28;
-    end.volume = 0.28;
-    fantasy.volume = 0.28;
-    fight.volume = 0.28;
-    hum.volume = 0.28;
-    intro.volume = 0.28;
-    market.volume = 0.28;
-    ocean.volume = 0.28;
-    train.volume = 0.28;
-    trek.volume = 0.28;
+    creepy.volume = 0.15;
+    end.volume = 0.15;
+    fantasy.volume = 0.15;
+    fight.volume = 0.15;
+    hum.volume = 0.15;
+    intro.volume = 0.15;
+    market.volume = 0.15;
+    ocean.volume = 0.15;
+    train.volume = 0.15;
+    trek.volume = 0.15;
 }
 
 let validVoices = {
