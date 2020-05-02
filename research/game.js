@@ -79,16 +79,16 @@ function playSounds() {
     trek.play();
     trek.pause();
 
-    creepy.volume = 0.4;
-    end.volume = 0.4;
-    fantasy.volume = 0.4;
-    fight.volume = 0.4;
-    hum.volume = 0.4;
-    intro.volume = 0.4;
-    market.volume = 0.4;
-    ocean.volume = 0.4;
-    train.volume = 0.4;
-    trek.volume = 0.4;
+    creepy.volume = 0.28;
+    end.volume = 0.28;
+    fantasy.volume = 0.28;
+    fight.volume = 0.28;
+    hum.volume = 0.28;
+    intro.volume = 0.28;
+    market.volume = 0.28;
+    ocean.volume = 0.28;
+    train.volume = 0.28;
+    trek.volume = 0.28;
 }
 
 let validVoices = {
@@ -217,6 +217,34 @@ function selectOption(option) {
     }
   }  
 
+  function selectOptionRepeat(option) {
+    repeatBtn.style.visibility = 'hidden';
+    const nextTextNodeID = option.nextText
+    lastOption = option
+
+    state = Object.assign(state, option.setState)
+    while (optionButtonElements.firstChild) {
+        optionButtonElements.removeChild(optionButtonElements.firstChild)
+    }
+    flowers.style.visibility = 'visible';
+    //Waiting for audio to play a bit before contiue
+    var waitingTime = 0;
+    if (option.timeWait) {
+      waitingTime = option.timeWait;
+    }
+    say(nextTextNodeID)
+  }
+
+  function fadeOut(sound) {
+    if( sound.volume > 0 ) { // only if we're not yet at 0
+      setTimeout(function() {
+        sound.volume -= 0.1;
+        fadeOut( sound ); // do it again after one second
+      }, 300);
+    }
+  }  
+
+
   function say(textNodeIndex) {
     repeatBtn.style.visibility = 'hidden'
     const audioName = chosenName + "/" + textNodeIndex + ".mp3";
@@ -281,7 +309,7 @@ function setSpeech() {
 }
 
 function repeatAudio (option) {
-    selectOption(option);
+    selectOptionRepeat(option);
 }
 
 const textNodes = [
@@ -289,7 +317,7 @@ const textNodes = [
         id: 1000000000,
                 options: [
             {
-                text: "zebra cake",
+                text: "Enter Game",
                 nextText: 1,
             },
         ],
