@@ -117,6 +117,7 @@ function startGame() {
             optionButtonElements.removeChild(optionButtonElements.firstChild)
         }
         flowers.style.visibility = 'hidden';
+        repeatBtn.style.visibility = 'hidden';
         let s = setSpeech();
         s.then(showTextNode(1000000000))
     }
