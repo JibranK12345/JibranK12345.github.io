@@ -79,16 +79,16 @@ function playSounds() {
     trek.play();
     trek.pause();
 
-    creepy.volume = 0.15;
-    end.volume = 0.15;
-    fantasy.volume = 0.15;
-    fight.volume = 0.15;
-    hum.volume = 0.15;
-    intro.volume = 0.15;
-    market.volume = 0.15;
-    ocean.volume = 0.15;
-    train.volume = 0.15;
-    trek.volume = 0.15;
+    creepy.volume = 1.0;
+    end.volume = 1.0;
+    fantasy.volume = 1.0;
+    fight.volume = 1.0;
+    hum.volume = 1.0;
+    intro.volume = 1.0;
+    market.volume = 1.0;
+    ocean.volume = 1.0;
+    train.volume = 1.0;
+    trek.volume = 1.0;
 }
 
 let validVoices = {
@@ -464,15 +464,15 @@ const textNodes = [
         text: "You’re at the grocery store now. What would you like to buy?",
         options: [
             {
-                                                                text: "Bread ",
-                nextText: 10,
+                                                                text: "Buy bread and head back to market.",
+                nextText: 13,
             },
             {
-                                                                text: "Fish corpse",
-                nextText: 10,
+                                                                text: "Buy fish corpse and head back to market.",
+                nextText: 13,
             },
             {
-                                                                text: "Leave ",
+                                                                text: "Leave store",
                 nextText: 13,
             },
         ],
@@ -482,15 +482,15 @@ const textNodes = [
         text: "You’re at the smoke store now.",
         options: [
             {
-                                                                text: "Cigarette ",
-                nextText: 11,
+                                                                text: "Buy cigarette and head back to market.",
+                nextText: 13,
             },
             {
-                                                                text: "Cigar ",
-                nextText: 11,
+                                                                text: "Buy cigar and head back to market.",
+                nextText: 13,
             },
             {
-                                                                text: "Leave ",
+                                                                text: "Leave store",
                 nextText: 13,
             },
         ],
@@ -500,15 +500,15 @@ const textNodes = [
         text: "You’re at the gimmicks store now.",
         options: [
             {
-                                                                text: "Yo-yo ",
-                nextText: 12,
+                                                                text: "Buy yo-yo and head back to market.",
+                nextText: 13,
             },
             {
-                                                                text: "Pack of cards ",
-                nextText: 12,
+                                                                text: "Buy pack of cards and head back to market.",
+                nextText: 13,
             },
             {
-                                                                text: "Leave ",
+                                                                text: "Leave store",
                 nextText: 13,
             },
         ],
@@ -518,15 +518,15 @@ const textNodes = [
         text: "Do you want to leave the market?",
         options: [
             {
-                                                                text: "Go to Gimmick Store ",
+                                                                text: "Return to Gimmick Store ",
                 nextText: 12,
             },
             {
-                                                                text: "Go to Grocery Store ",
+                                                                text: "Return to Grocery Store ",
                 nextText: 10,
             },
             {
-                                                                text: "Go to Smoke Store ",
+                                                                text: "Return to Smoke Store ",
                 nextText: 11,
             },
             {
