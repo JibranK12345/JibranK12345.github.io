@@ -175,6 +175,7 @@ function selectOption(option) {
           "new": "yes"
         })
     }
+    
     if (nextTextNodeID == 1) {
         console.log("started game");
         playSounds();
