@@ -166,6 +166,7 @@ function selectOption(option) {
     const nextTextNodeID = option.nextText
     lastOption = option
     chosenOptions.push(option.optionID)
+    
     if (nextTextNodeID <= 0) {
         //Upload state to database
         document.cookie = "completed=true; expires=Thu, 18 Dec 2021 12:00:00 UTC";
