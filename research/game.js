@@ -142,7 +142,6 @@ function getCookie(cname) {
 
 function showTextNode(textNodeIndex) {
 
-    chosenOptions.push(textNodeIndex)
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
     while (optionButtonElements.firstChild) {
         optionButtonElements.removeChild(optionButtonElements.firstChild)
@@ -166,12 +165,14 @@ function selectOption(option) {
     repeatBtn.style.visibility = 'hidden';
     const nextTextNodeID = option.nextText
     lastOption = option
+    chosenOptions.push(nextTextNodeID)
     if (nextTextNodeID <= 0) {
         //Upload state to database
         document.cookie = "completed=true; expires=Thu, 18 Dec 2021 12:00:00 UTC";
         firebase.database().ref('users/').push({
-            "name": chosenName,
-          "choices": chosenOptions
+          "name": chosenName,
+          "choices": chosenOptions,
+          "new": "yes"
         })
     }
     if (nextTextNodeID == 1) {
